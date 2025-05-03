@@ -1,14 +1,22 @@
 # HSBCHKCSVImporter
-A beancount csv importer for HSBC(HK)
 
-## Convert PDF Statement to CSV
+A Beancount CSV importer for HSBC Hong Kong statements.
 
-Thanks for primefission's work, you can convert pdf to csv simply by it.
+## Convert PDF Statements to CSV
 
-Download it from [primefission/HsbcHkPdfScraper](https://github.com/primefission/HsbcHkPdfScraper)
+Thanks to [sinopsysHK](https://github.com/sinopsysHK), you can easily convert your PDF statements to CSV:
 
-## CSV importer
+1. Clone or download the scraper from [HsbcHkPdfScraper](https://github.com/sinopsysHK/HsbcHkPdfScraper).  
+2. Follow the instructions in that repository to generate a CSV file from your PDF statement.
 
-Modify the sample configuration file in config.py to your own configuration first.
+## CSV Importer
 
-Run `bean-extract config.py /path/to/BANK-(your bank number)-(year and month).csv > output.beancount`
+> Learn more in my [blog post](https://blog.ckyol.moe/2023/05/16/HSBCHKCSVImporter/)
+
+1. Modify `config.py` and update it with your own account details and settings.  
+2. Run the importer:
+
+   ```bash
+   bean-extract config.py /path/to/BANK-<YourAccountNumber>-<YYYYMM>.csv > output.beancount
+   ```
+This will generate a Beancount ledger file (output.beancount) containing all of your HSBC Hong Kong transactions.
